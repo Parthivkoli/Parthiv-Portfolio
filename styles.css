@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* General Styles */
+:root {
+    --bg-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --accent-color: #61dafb;
+    --secondary-color: #282c34;
+    --hover-color: #4fa8d5;
+    --container-bg: rgba(40, 44, 52, 0.7);
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+#hero {
+    padding: 20px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.about-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: var(--text-color);
+}
+
+.social-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Profile Image Container */
+.profile-image-container {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative; /* Ensure the image stays above the glow */
+    z-index: 2; /* Higher z-index than the glow */
+}
+
+.profile-image-container::before {
+    content: '';
+    position: absolute;
+    top: -15px; /* Slightly larger offset for a wider glow */
+    left: -15px; /* Adjusted to center the glow behind the image */
+    width: 280px; /* Slightly larger than the image for a glow effect */
+    height: 280px;
+    background: var(--accent-color); /* Blue glow */
+    border-radius: 50%;
+    filter: blur(25px); /* Increased blur for a softer glow */
+    opacity: 0.6; /* Reduced opacity for subtlety */
+    z-index: 1; /* Lower z-index than the image */
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 36px;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    bottom: -10px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.content-box {
+    background-color: var(--container-bg);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+}
+
+.content-box h3 {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    font-size: 16px;
+}
+
+.date {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+    background-color: var(--hover-color);
+}
+
+/* Buttons */
+button, .btn, .email-btn {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, .btn:hover, .email-btn:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .about-text {
+        font-size: 14px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-image-container::before {
+        width: 180px; /* Adjusted for smaller image */
+        height: 180px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .profile-image-container {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--bg-color);
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-list li {
+        width: 80%;
+        text-align: center;
+    }
+
+    button, .btn, .email-btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+}
+
+@media (min-width: 769px) {
+    nav ul {
+        display: flex;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

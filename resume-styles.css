@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f0f0; /* Light gray background to contrast with the "paper" */
+    font-family: 'Times New Roman', Times, serif; /* Classic resume font */
+    line-height: 1.5;
+    color: #000;
+}
+
+/* Resume Container (A4 Paper) */
+.resume-container {
+    width: 210mm; /* A4 width */
+    min-height: 297mm; /* A4 height */
+    margin: 20px auto; /* Center the page with some margin */
+    padding: 20mm; /* Standard PDF margin */
+    background-color: #fff; /* White paper background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #ddd; /* Light border to mimic paper edge */
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+header p strong {
+    font-weight: bold;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Specific Section Adjustments */
+#career-objective p {
+    text-align: justify;
+}
+
+#experience p:first-of-type,
+#education p:first-of-type,
+#projects p:first-of-type {
+    font-style: italic;
+    color: #555;
+}
+
+#skills ul {
+    list-style-type: none;
+    columns: 2; /* Two-column layout for skills */
+    column-gap: 20px;
+}
+
+#skills li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#projects a,
+#contact a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+#projects a:hover,
+#contact a:hover {
+    color: #551A8B;
+}
+
+/* Back Button */
+.back-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.back-button a:hover {
+    background-color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    padding: 10px 0;
+}
+
+/* Print Styling */
+@media print {
+    body {
+        background-color: #fff;
+        margin: 0;
+    }
+
+    .resume-container {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .back-button {
+        display: none; /* Hide back button when printing */
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 800px) {
+    .resume-container {
+        width: 100%;
+        margin: 10px;
+        padding: 15mm;
+        min-height: auto; /* Allow content to flow naturally on smaller screens */
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    p, #skills li {
+        font-size: 12px;
+    }
+
+    #skills ul {
+        columns: 1; /* Single column on small screens */
+    }
+}
